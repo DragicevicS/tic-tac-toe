@@ -8,13 +8,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
   height: 100vh;
   background-color: rgb(65, 63, 63);
 }
 
 .game-container {
   display: grid;
+  grid-template: 10% 1fr / 1fr;
   padding: 2em;
   height: 500px;
   width: 500px;
@@ -22,12 +22,18 @@ body {
   border: solid 1px lightseagreen;
 }
 
-.board {
+.player-turn {
+  color: lightseagreen;
+}
+
+.board-container {
   display: grid;
   grid-template: repeat(3, 1fr) / repeat(3, 1fr);
   border-collapse: collapse;
+  border: solid 1px lightseagreen;
 }
 
 .board div {
   border: solid 1px lightseagreen;
 }
+
