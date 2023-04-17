@@ -6,34 +6,109 @@
 
 body {
   display: flex;
+  flex-direction: column;
+  gap: 1em;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: rgb(65, 63, 63);
+  background-color: rgb(10, 10, 10);
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.header {
+  font-size: 4rem;
+  color: lightseagreen;
 }
 
 .game-container {
   display: grid;
   grid-template: 10% 1fr / 1fr;
+  gap: 1em;
   padding: 2em;
   height: 500px;
   width: 500px;
   background-color: black;
-  border: solid 1px lightseagreen;
+  border: solid 2px lightseagreen;
+  border-radius: 5px;
 }
 
 .player-turn {
   color: lightseagreen;
+  text-align: center;
 }
 
 .board-container {
-  display: grid;
   grid-template: repeat(3, 1fr) / repeat(3, 1fr);
   border-collapse: collapse;
-  border: solid 1px lightseagreen;
+  border: solid 2px lightseagreen;
 }
 
-.board div {
-  border: solid 1px lightseagreen;
+.board-container button {
+  font-size: 6rem;
+  background-color: black;
+  color: lightseagreen;
+}
+
+form {
+  flex-direction: column;
+  gap: 1.5em;
+  padding: 1.5em;
+  font-size: 1.5rem;
+  color: lightseagreen;
+}
+
+form input[type="text"] {
+  padding: 5px;
+  font-size: 1rem;
+  background-color: black;
+  color: lightseagreen;
+  border: solid 2px lightseagreen;
+  border-radius: 5px;
+}
+
+form div {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.choose input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.choose label {
+  display: inline-block;
+  background-color: black;
+  padding: 10px;
+  font-size: 1.1rem;
+  border: solid 2px lightseagreen;
+  border-radius: 5px;
+}
+
+.choose label:hover {
+  background-color: rgb(39, 43, 42);
+}
+
+.choose input[type="radio"]:focus + label {
+  border: solid 2px white;
+}
+
+.choose input[type="radio"]:checked + label {
+  border-color: white;
+}
+
+.submit {
+  justify-content: center;
+}
+
+#play {
+  padding: 10px 1.5em;
+  font-size: 1.1rem;
+  background-color: black;
+  color: lightseagreen;
+  border: solid 2px lightseagreen;
+  border-radius: 5px;
 }
 

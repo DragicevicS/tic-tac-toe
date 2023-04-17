@@ -9,9 +9,34 @@
   <script src="game.js" defer></script>
 </head>
 <body>
+  <h1 class="header"><em>Tic Tac Toe</em></h1>
   <div class="game-container">
-    <h1 class="player-turn"></h1>
-    <div class="board-container"></div>
+    <form style="display: flex;">
+    <div>
+      <label for="player-1">Player 1:</label>
+      <input type="text" name="player-1" id="player-1" autocomplete="off">
+    </div>
+    <div class="choose">
+      <p>Choose:</p>
+      <input type="radio" name="choice" id="X" value="X" checked>
+      <label for="X">X</label>
+
+      <input type="radio" name="choice" id="O" value="O">
+      <label for="O">O</label>
+
+      <input type="radio" name="choice" id="random" value="random">
+      <label for="random">Random</label>
+    </div>
+    <div>
+      <label for="player-2">Player 2:</label>
+      <input type="text" name="player-2" id="player-2" autocomplete="off">
+    </div>
+    <div class="submit">
+      <button type="submit" id="play">Play</button>
+    </div>
+    </form>
+    <h1 class="player-turn" style="display: none;"></h1>
+    <div class="board-container" style="display: none;"></div>
   </div>
 </body>
 </html>
