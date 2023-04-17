@@ -9,12 +9,16 @@
   <script src="game.js" defer></script>
 </head>
 <body>
-  <h1 class="header"><em>Tic Tac Toe</em></h1>
-  <div class="game-container">
+  <div class="header">
+  <h1 class="animate pop delay-1"><em>Tic</em></h1>
+  <h1 class="animate pop delay-2"><em>Tac</em></h1>
+  <h1 class="animate pop delay-3"><em>Toe</em></h1>
+  </div>
+  <div class="game-container animate pop delay-4">
     <form style="display: flex;">
     <div>
       <label for="player-1">Player 1:</label>
-      <input type="text" name="player-1" id="player-1" autocomplete="off">
+      <input type="text" name="player-1" id="player-1" autocomplete="off" required>
     </div>
     <div class="choose">
       <p>Choose:</p>
@@ -29,7 +33,7 @@
     </div>
     <div>
       <label for="player-2">Player 2:</label>
-      <input type="text" name="player-2" id="player-2" autocomplete="off">
+      <input type="text" name="player-2" id="player-2" autocomplete="off" required>
     </div>
     <div class="submit">
       <button type="submit" id="play">Play</button>
@@ -38,5 +42,33 @@
     <h1 class="player-turn" style="display: none;"></h1>
     <div class="board-container" style="display: none;"></div>
   </div>
+
+  <span class="floating circle" style="top:66%;left:9%;animation-delay:-0.9s;">&#9675;</span>
+  <span class="floating cross" style="top:76%;left:38%;animation-delay:-4s;">&#10005;</span>
+  <span class="floating cross" style="top:31%;left:75%;animation-delay:-0.65s;">&#10005;</span>
+  <span class="floating cross" style="top:69%;left:81%;animation-delay:-0.4s;">&#10005;</span>
+  <span class="floating circle" style="top:15%;left:32%;animation-delay:-4.1s;">&#9675;</span>
+  <span class="floating cross" style="top:13%;left:45%;animation-delay:-3.65s;">&#10005;</span>
+  <span class="floating circle" style="top:55%;left:27%;animation-delay:-2.25s;">&#9675;</span>
+  <span class="floating cross" style="top:49%;left:3%;animation-delay:-2s;">&#10005;</span>
+  <span class="floating circle" style="top:34%;left:49%;animation-delay:-1.55s;">&#9675;</span>
+  <span class="floating circle" style="top:50%;left:86%;animation-delay:-0.95s;">&#9675;</span>
+  <span class="floating circle" style="top:31%;left:16%;animation-delay:-4.8s;">&#9675;</span>
+  <span class="floating cross" style="top:21%;left:10%;animation-delay:-2.8s;">&#10005;</span>
+  <span class="floating circle" style="top:58%;left:56%;animation-delay:-2.15s;">&#9675;</span>
+  <span class="floating cross" style="top:8%;left:72%;animation-delay:-1.9s;">&#10005;</span>
+  <span class="floating cross" style="top:44%;left:25%;animation-delay:-4.45s;">&#10005;</span>
+  <span class="floating cross" style="top:77%;left:24%;animation-delay:-2.3s;">&#10005;</span>
+  <span class="floating circle" style="top:2%;left:57%;animation-delay:-1.75s;">&#9675;</span>
+  <span class="floating cross" style="top:71%;left:66%;animation-delay:-1.25s;">&#10005;</span>
+  <span class="floating cicrle" style="top:31%;left:76%;animation-delay:-0.65s;">&#9675;</span>
+  <span class="floating cross" style="top:46%;left:38%;animation-delay:-0.35s;">&#10005;</span>
+  <span class="floating circle" style="top:23%;left:63%;animation-delay:-2.1s;">&#9675;</span>
+  <span class="floating circle" style="top:81%;left:45%;animation-delay:-1.75s;">&#9675;</span>
+  <span class="floating circle" style="top:8%;left:20%;animation-delay:-1.45s;">&#9675;</span>
+  <span class="floating cross" style="top:29%;left:93%;animation-delay:-1.05s;">&#10005;</span>
+  <span class="floating circle" style="top:52%;left:68%;animation-delay:-1.95s;">&#9675;</span>
+  <span class="floating circle" style="top:81%;left:90%;animation-delay:-0.35s;">&#9675;</span>
+  <span class="floating circle" style="top:11%;left:91%;animation-delay:-0.1s;">&#9675;</span>
 </body>
 </html>

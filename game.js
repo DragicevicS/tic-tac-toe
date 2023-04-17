@@ -1,4 +1,4 @@
-const settings = (() => {
+const settings = (() => { // starting screen settings for adding player names and choosing symbols
 const form = document.querySelector('form');
 function switchDisplay(e) {
   const playerTurn = document.querySelector('.player-turn');
@@ -48,12 +48,13 @@ const game = () => {
   const switchPlayer = () => activePlayer = activePlayer === player[0] ? player[1] : player[0];
   const getActivePlayer = () => activePlayer;
   playerTurn.textContent = `${getActivePlayer().name}'s turn - ${getActivePlayer().playerSymbol}`;
-  for (let i=0; i < 9; i++) { // setting 9 buttons as the board
+
+  for (let i = 0; i < 9; i++) { // setting 9 buttons as the board
     const cellButton = document.createElement('button');
     cellButton.setAttribute('id', i);
     boardContainer.appendChild(cellButton);
   };
-
+  
   function checkResult() { // function with game logic and checking if there is a winner or a draw
     let bs = boardContainer.children;
     let cps = getActivePlayer().playerSymbol;
@@ -90,7 +91,6 @@ const game = () => {
     const selectedCell = e.target.id;
     if (!selectedCell) return;
     makeMove(selectedCell);
-    console.log(player1);
   };
   boardContainer.addEventListener('click', clickHandlerBoard);
 };
