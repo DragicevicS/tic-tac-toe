@@ -43,7 +43,7 @@ const game = () => {
   ];
   const playerTurn = document.querySelector('.player-turn');
   const boardContainer = document.querySelector('.board-container');
-
+  
   let activePlayer = player[0];
   if (activePlayer.playerSymbol == 'O') activePlayer = player[1]; // statement for 'X' being the first one to make a move
   const switchPlayer = () => activePlayer = activePlayer === player[0] ? player[1] : player[0];
@@ -63,8 +63,8 @@ const game = () => {
     let cps = getActivePlayer().playerSymbol;
     function alertWinner() { // custom alert box for declaring result
       switchPlayer();
-      boardContainer.removeEventListener('click', clickHandlerBoard);
       boardContainer.classList.add('disabled', 'alert-opacity-low');
+      boardContainer.removeEventListener('click', clickHandlerBoard);
       setTimeout(() => {
       playerTurn.textContent = '';
       alertDiv.style.display = 'flex';
@@ -121,8 +121,8 @@ const game = () => {
       return alertWinner();
     }
     else if (bs[0].textContent != '' && bs[1].textContent != '' && bs[2].textContent != '' && bs[3].textContent != '' && bs[4].textContent != '' && bs[5].textContent != '' && bs[6].textContent != '' && bs[7].textContent != '' && bs[8].textContent != '') {
-      boardContainer.removeEventListener('click', clickHandlerBoard);
       boardContainer.classList.add('disabled', 'alert-opacity-low');
+      boardContainer.removeEventListener('click', clickHandlerBoard);
       setTimeout(() => {
       playerTurn.textContent = '';
       alertDiv.style.display = 'flex';
@@ -134,7 +134,7 @@ const game = () => {
   const makeMove = (a) => { // core function for every move, with game logic
     if (boardContainer.children[a].textContent == 'X' || boardContainer.children[a].textContent == 'O') { // checks if the cell is empty
       playerTurn.textContent = 'Invalid move';
-      setTimeout(() => {playerTurn.textContent = `${getActivePlayer().name}'s turn - ${getActivePlayer().playerSymbol}`}, 1300);
+      setTimeout(() => {playerTurn.textContent = `${getActivePlayer().name}'s turn - ${getActivePlayer().playerSymbol}`}, 1200);
     } else {   
       boardContainer.children[a].textContent =  getActivePlayer().playerSymbol; // updates cell's value if it's empty
       checkResult(); // checks if the game is finished
@@ -151,11 +151,14 @@ const game = () => {
   boardContainer.addEventListener('click', clickHandlerBoard);
 
   const playAgain = document.querySelector('.play-again');
+
   function playAnotherRound() { // playing another round with the same players
-  alertDiv.style.display = 'none';
-  boardContainer.textContent = '';
-  boardContainer.classList.remove('disabled', 'alert-opacity-low');
-  game();
+    alertDiv.style.display = 'none';
+    boardContainer.textContent = '';
+    boardContainer.classList.remove('disabled', 'alert-opacity-low');
+    boardContainer.removeEventListener('click', clickHandlerBoard);
+    playAgain.removeEventListener('click', playAnotherRound);
+    game();
   };
   playAgain.addEventListener('click', playAnotherRound);
 };
