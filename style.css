@@ -27,10 +27,10 @@ body {
 .game-container {
   display: grid;
   grid-template: 10% 1fr / 1fr;
-  gap: 1em;
-  padding: 2em;
-  height: 31em;
-  width: 31em;
+  gap: 0.6em;
+  padding: 1.8em;
+  height: 595px;
+  width: 535px;
   background-color: black;
   border: solid 2px lightseagreen;
   border-radius: 5px;
@@ -56,12 +56,14 @@ body {
 
 .board-container button:hover {
   background-color: rgb(39, 43, 42);
+  cursor: pointer;
 }
 
 form {
   flex-direction: column;
+  align-items: center;
   gap: 1.5em;
-  padding: 1.5em;
+  padding: 3em 2.5em;
   font-size: 1.5rem;
   color: lightseagreen;
 }
@@ -83,7 +85,7 @@ form input[type="text"]:focus {
 form div {
   display: flex;
   align-items: center;
-  gap: 0.5em;
+  gap: 0.8em;
 }
 
 .choose input[type="radio"] {
@@ -103,6 +105,7 @@ form div {
 
 .choose label:hover {
   background-color: rgb(39, 43, 42);
+  cursor: pointer;
 }
 
 .choose input[type="radio"]:focus + label {
@@ -124,13 +127,93 @@ form div {
   color: lightseagreen;
   border: solid 2px lightseagreen;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 #play:hover {
   background-color: rgb(39, 43, 42);
 }
 
+.alert {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+  width: 535px;
+  padding: 1.5em;
+  font-size: 2rem;
+  border: solid 2px lightseagreen;
+  border-radius: 5px;
+  background-color: black;
+  color: lightseagreen;
+  position: absolute;
+  z-index: 1;
+}
+
+.buttons {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.buttons button {
+  width: 35%;
+  background-color: black;
+  font-size: 1.2rem;
+  color: lightseagreen;
+  padding: 10px 0;
+  border: solid 2px lightseagreen;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+.buttons button:hover {
+  background-color: rgb(39, 43, 42);
+  cursor: pointer;
+}
+
+.disabled {
+  pointer-events: none;
+}
+
+
 /* animations */
+
+.alert-opacity-low {
+  animation-name: alert-opacity-low;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes alert-opacity-low {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.4;
+  }
+}
+
+.alert-opacity-high {
+  animation-name: alert-opacity-high;
+  animation-duration: 2s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes alert-opacity-high {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 
 .animate.pop {
   animation-duration: 1s;
@@ -171,7 +254,6 @@ form div {
 }
 
 
-
 .back-shapes img {
   opacity: 0.2;
   position: absolute;
@@ -187,6 +269,7 @@ form div {
   animation-iteration-count: infinite;
   -webkit-animation-iteration-count: infinite;
 }
+
 .floating.circle {
   display: inline-block;
   width: 39px;

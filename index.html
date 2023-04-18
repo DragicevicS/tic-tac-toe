@@ -19,7 +19,7 @@
     <form style="display: flex;">
     <div>
       <label for="player-1">Player 1:</label>
-      <input type="text" name="player-1" id="player-1" autocomplete="off" required>
+      <input type="text" name="player-1" id="player-1" autocomplete="off" maxlength="14" required>
     </div>
     <div class="choose">
       <p>Choose:</p>
@@ -34,7 +34,7 @@
     </div>
     <div>
       <label for="player-2">Player 2:</label>
-      <input type="text" name="player-2" id="player-2" autocomplete="off" required>
+      <input type="text" name="player-2" id="player-2" autocomplete="off" maxlength="14" required>
     </div>
     <div class="submit">
       <button type="submit" id="play">Play</button>
@@ -42,6 +42,13 @@
     </form>
     <h1 class="player-turn" style="display: none;"></h1>
     <div class="board-container" style="display: none;"></div>
+  </div>
+  <div class="alert">
+    <p class="alert-para"></p>
+    <div class="buttons">
+      <button class="play-again">Play again</button>
+      <button onclick="location.reload();">Quit</button>
+    </div>
   </div>
 
   <span class="floating circle" style="top:66%;left:9%;animation-delay:-0.9s;">&#9675;</span>
