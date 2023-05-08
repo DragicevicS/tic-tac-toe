@@ -1,7 +1,8 @@
-const settings = (() => { // starting screen settings for adding player names and choosing symbols
+const mainMenu = (() => { // starting screen main menu for adding player names and choosing symbols
 const form = document.querySelector('form');
 const playerTurn = document.querySelector('.player-turn');
 const boardContainer = document.querySelector('.board-container');
+
 function switchDisplay(e) {
   e.preventDefault();
   form.style.display = 'none'
@@ -131,6 +132,7 @@ const game = () => {
       }, 300);
     };
   };
+
   const makeMove = (a) => { // core function for every move, with game logic
     if (boardContainer.children[a].textContent == 'X' || boardContainer.children[a].textContent == 'O') { // checks if the cell is empty
       playerTurn.textContent = 'Invalid move';
@@ -151,7 +153,6 @@ const game = () => {
   boardContainer.addEventListener('click', clickHandlerBoard);
 
   const playAgain = document.querySelector('.play-again');
-
   function playAnotherRound() { // playing another round with the same players
     alertDiv.style.display = 'none';
     boardContainer.textContent = '';
